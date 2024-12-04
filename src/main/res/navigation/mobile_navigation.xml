@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.walkwatch.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.walkwatch.ui.dashboard.ProfileSecFragment"
+        android:label="@string/title_CrimeData"
+        tools:layout="@layout/fragment_crime_data" />
+
+    <fragment
+        android:id="@+id/navigation_location"
+        android:name="com.example.walkwatch.LocationFragment"
+        android:label="@string/title_Location"
+        tools:layout="@layout/fragment_location" />
+
+    <fragment
+        android:id="@+id/navigation_community"
+        android:name="com.example.walkwatch.CommunityFragment"
+        android:label="@string/title_Community"
+        tools:layout="@layout/fragment_community" />
+
+    <fragment
+        android:id="@+id/navigation_crimedata"
+        android:name="com.example.walkwatch.CrimeDataFragment"
+        android:label="@string/title_CrimeData"
+        tools:layout="@layout/fragment_crime_data" />
+</navigation>

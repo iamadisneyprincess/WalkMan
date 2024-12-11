@@ -1,12 +1,12 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.NavigationUI
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,17 +19,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
+        // Align with findViewById approach
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        val navController: NavController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        // Set up AppBar configuration for top-level destinations
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_community,
+                R.id.navigation_route,
+                R.id.navigation_home,
+                R.id.navigation_crimedata,
+                R.id.navigation_profile
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+
+        // Setup ActionBar with NavController
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
+
+        // Set up Bottom Navigation with NavController
+        NavigationUI.setupWithNavController(navView, navController)
     }
 }

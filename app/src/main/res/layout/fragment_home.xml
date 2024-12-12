@@ -1,85 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#2E003E">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#310329">
 
     <!-- Header Section -->
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Walk Watch"
-            android:textSize="24sp"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:drawablePadding="8dp" />
+        <ImageView
+            android:id="@+id/headerLogo"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/paa_2" />
 
-        <!-- Subheader Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
             android:gravity="center"
-            android:layout_marginTop="8dp">
+            android:orientation="horizontal">
 
+            <!-- Safe Zones -->
             <TextView
                 android:id="@+id/safeZone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:padding="4dp"
                 android:text="Safe Zones"
-                android:textSize="14sp"
                 android:textColor="#FFFFFF"
-                android:layout_marginEnd="16dp" />
+                android:textSize="14sp" />
 
+            <!-- Incident Report -->
             <TextView
                 android:id="@+id/incidentReport"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:padding="4dp"
                 android:text="Incident Report"
-                android:textSize="14sp"
                 android:textColor="#FFFFFF"
-                android:layout_marginEnd="16dp" />
+                android:textSize="14sp" />
 
+            <!-- Crime Risk -->
             <TextView
                 android:id="@+id/crimeRisk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:padding="4dp"
                 android:text="Crime Risk: High"
-                android:textSize="14sp"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Map View -->
-    <org.osmdroid.views.MapView
-        android:id="@+id/mapView"
+    <!-- Map View in MaterialCardView -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mapCard"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_below="@id/headerLayout"
         android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray" />
+        app:cardBackgroundColor="@android:color/darker_gray"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Panic Button -->
     <Button
         android:id="@+id/panicButton"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:text="Panic Button"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/pbutton_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/mapCard"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:layout_alignParentBottom="true" />
+        android:background="@drawable/circle_background"
+        android:gravity="center"
+        android:text="Panic Button"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
 </RelativeLayout>

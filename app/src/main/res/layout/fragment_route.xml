@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.route.RouteFragment">
 
+    <!-- GIF ImageView centered at the top -->
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/walkingFigurine"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/pin_12" />
+
+    <!-- Title for the Page -->
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="match_parent"
@@ -13,10 +24,24 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="Choose your place"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/placesContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/walkingFigurine"
+        android:textColor="@color/white"/>
+
+    <!-- Container for all Places -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/placesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

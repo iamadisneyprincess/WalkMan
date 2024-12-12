@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Top Circular Section (Split into colors) -->
+    <path
+        android:fillColor="#4285F4"
+    android:pathData="M50,20 A30,30 0 0,1 80,50 A30,30 0 0,1 50,80 A30,30 0 0,1 20,50 A30,30 0 0,1 50,20 Z"/>
+
+    <path
+        android:fillColor="#34A853"
+    android:pathData="M50,20 A30,30 0 0,1 50,80 A30,30 0 0,0 20,50 A30,30 0 0,1 50,20 Z"/>
+
+    <path
+        android:fillColor="#FBBC05"
+    android:pathData="M50,80 A30,30 0 0,1 50,20 A30,30 0 0,0 80,50 A30,30 0 0,1 50,80 Z"/>
+
+    <path
+        android:fillColor="#EA4335"
+    android:pathData="M50,80 A30,30 0 0,1 20,50 A30,30 0 0,1 50,20 A30,30 0 0,0 50,80 Z"/>
+
+    <!-- Central Circle (Cut-out for center of the pin) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,40 A10,10 0 1,0 50,60 A10,10 0 1,0 50,40 Z"/>
+
+    <!-- Pin Body (Triangle part) -->
+    <path
+        android:fillColor="#34A853"
+    android:pathData="M50,80 L35,100 L65,100 "/>
+
+</vector>

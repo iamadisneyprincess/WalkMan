@@ -54,5 +54,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("org.osmdroid:osmdroid-android:6.1.14")
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
+
 
 }

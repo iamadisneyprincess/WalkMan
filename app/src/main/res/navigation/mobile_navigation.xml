@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_community"
-        android:name="com.example.myapplication.ui.community.communityFragment"
+        android:name="com.example.myapplication.ui.community.CommunityFragment"
         android:label="@string/title_community"
         tools:layout="@layout/fragment_community" />
 
@@ -23,11 +23,6 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/navigation_crimedata"
-        android:name="com.example.myapplication.ui.notifications.CrimeDataFragment"
-        android:label="@string/title_crimedata"
-        tools:layout="@layout/fragment_crimedata" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.myapplication.ui.profile.profileFragment"

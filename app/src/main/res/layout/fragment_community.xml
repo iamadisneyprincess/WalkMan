@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.community.communityFragment">
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/walkingFigurine"
+            android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/walking" />
+
+        <!-- Main Title, positioned below the Walking Figurine -->
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/walkingFigurine"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="WALK BUDDY"
+            android:textColor="#FFFFFF"
+            android:textIsSelectable="true"
+            android:textSize="25sp" />
+
+        <!-- Community Title -->
+        <TextView
+            android:id="@+id/communityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to the Community"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_below="@id/Title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <!-- Button to Join Community -->
+        <Button
+            android:id="@+id/joinCommunityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:text="Join the Community"
+            android:layout_below="@id/communityTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <!-- Divider for content separation -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/joinCommunityButton"
+            android:layout_marginTop="20dp"
+            android:background="#D3D3D3" />
+
+        <!-- Community Updates Section -->
+        <TextView
+            android:id="@+id/communityUpdatesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latest Updates"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_below="@id/joinCommunityButton"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="8dp" />
+
+        <!-- RecyclerView for Posts -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/communityUpdatesTitle"
+            android:layout_marginTop="16dp" />
+
+    </RelativeLayout>
+</android.widget.ScrollView>

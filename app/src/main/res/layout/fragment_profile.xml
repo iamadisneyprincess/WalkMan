@@ -14,13 +14,39 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/logoImage"
+        <RelativeLayout
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/user"
-        android:scaleType="centerCrop" />
+            android:layout_marginBottom="16dp">
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/user"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circular_background"
+                android:clipToOutline="true"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Pencil Icon for Edit -->
+            <ImageView
+                android:id="@+id/editPencilIcon"
+                android:layout_width="33dp"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@id/logoImage"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="108dp"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:contentDescription="Edit Profile"
+                android:focusable="true"
+                android:src="@drawable/pencil"
+                app:tint="@android:color/white" />
+        </RelativeLayout>
 
         <!-- Name Card -->
         <com.google.android.material.card.MaterialCardView
@@ -33,14 +59,15 @@
             app:strokeWidth="1dp"
             app:cardBackgroundColor="#FFFFFF">
 
-            <TextView
-                android:id="@+id/textViewName"
+            <EditText
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Name: Angel Mae C. Bacsa"
+                android:hint="Name"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColorHint="#707070"/>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Birthday Card -->
@@ -54,14 +81,15 @@
             app:strokeWidth="1dp"
             app:cardBackgroundColor="#FFFFFF">
 
-            <TextView
-                android:id="@+id/textViewBirthday"
+            <EditText
+                android:id="@+id/editTextBirthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Birthday: 08/24/2002"
+                android:hint="Birthday"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColorHint="#707070"/>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Phone Number Card -->
@@ -75,14 +103,15 @@
             app:strokeWidth="1dp"
             app:cardBackgroundColor="#FFFFFF">
 
-            <TextView
-                android:id="@+id/textViewPhone"
+            <EditText
+                android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Phone: +63 907 2423 918"
+                android:hint="Phone"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColorHint="#707070"/>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Email Card -->
@@ -96,15 +125,23 @@
             app:strokeWidth="1dp"
             app:cardBackgroundColor="#FFFFFF">
 
-            <TextView
-                android:id="@+id/textViewEmail"
+            <EditText
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email: 21-00423@g.batstate-u.edu.ph"
+                android:hint="Email"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:padding="16dp" />
+                android:padding="16dp"
+                android:textColorHint="#707070"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_gravity="center" />
     </LinearLayout>
 </RelativeLayout>

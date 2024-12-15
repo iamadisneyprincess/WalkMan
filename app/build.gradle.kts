@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
+    implementation(libs.firebase.crashlytics.buildtools)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -58,6 +59,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
+    implementation ("com.google.code.gson:gson:2.8.9")
 
 
 }

@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     android:background="#310329">
 
-    <!-- Header Section -->
-    <LinearLayout
+    <!-- Header Section with Logo and Contacts -->
+    <RelativeLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <ImageView
             android:id="@+id/headerLogo"
@@ -20,83 +21,104 @@
             android:layout_marginBottom="8dp"
             android:src="@drawable/paa_2" />
 
+        <Button
+            android:id="@+id/contactsButton"
+            android:layout_width="75dp"
+            android:layout_height="57dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="114dp"
+            android:layout_marginEnd="23dp"
+            android:layout_toEndOf="@id/headerLogo"
+            android:background="@drawable/contacts"
+            android:drawablePadding="8dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <!-- Safe Zones -->
-            <TextView
-                android:id="@+id/safeZone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="4dp"
-                android:text="Safe Zones"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-
-            <!-- Incident Report -->
-            <TextView
-                android:id="@+id/incidentReport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="4dp"
-                android:text="Incident Report"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-
-            <!-- Crime Risk -->
-            <TextView
-                android:id="@+id/crimeRisk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:padding="4dp"
-                android:text="Crime Risk: High"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <!-- Map View in MaterialCardView -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mapCard"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@id/headerLayout"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@android:color/darker_gray"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
-
-        <org.osmdroid.views.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Panic Button -->
-    <Button
-        android:id="@+id/panicButton"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@id/mapCard"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/circle_background"
+            android:layout_below="@id/headerLogo"
+        android:layout_marginTop="5dp"
+        android:baselineAligned="false"
         android:gravity="center"
-        android:text="Panic Button"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/safeZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Safe Zones"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/incidentReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Incident Report"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/crimeRisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Crime Risk: High"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Map View Section with Textfields -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:layout_marginTop="2dp">
+
+        <!-- Map View in MaterialCardView -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mapCard"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@android:color/darker_gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Safe Zones, Incident Report, Crime Risk -->
+
+        <!-- Panic Button -->
+        <Button
+            android:id="@+id/panicButton"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_below="@id/mapCard"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:text="Panic Button"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
 </RelativeLayout>
